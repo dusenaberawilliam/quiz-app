@@ -1,0 +1,42 @@
+ul {
+    list-style-type: none;
+}
+  
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar > h2 {
+    font-weight: 600;
+    color: #002147;
+    font-size: 20px;
+}
+  
+.navbar {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    height: 65px;
+}
+  
+.navbar .flex {
+    justify-content: space-between;
+}
+  
+.navbar ul {
+    display: flex;
+}
+  
+.navbar a {
+    color: #002147;
+    padding: 10px;
+    margin: 0 5px;
+}
+  
+.navbar a:hover {
+    border-bottom: 2px #002147 solid;
+}
+

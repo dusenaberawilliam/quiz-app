@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    background-color: #002147;
+    color: white;
+    justify-content: space-between;
+    padding: 0 35px;
+    align-items: center;
+    text-align: center;
+}
+
+.header__logo > img{
+    width: 120px;
+    height: 60px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.header__info > h3 {
+    font-weight: 300;
+    font-size: 15px;
+    padding: 0 15px;
+}
+
+.header__info {
+    display: flex;
+}

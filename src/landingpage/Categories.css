@@ -1,0 +1,32 @@
+.category {
+    background-color: white;
+    margin: 30px 0;
+    padding: 0 150px;
+}
+
+.category__text-center {
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.category__img {
+    display: flex;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    justify-content: space-between;
+}
+
+.category__card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.2s ease-in;
+}
+
+.category__card:hover {
+    transform: translateY(-15px);
+}

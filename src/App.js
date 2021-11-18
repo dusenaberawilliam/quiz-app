@@ -9,23 +9,34 @@ import Login from './signing/Login';
 import About from './landingpage/About';
 import ContactUs from './landingpage/ContactUs';
 import Quiz from './quiz/Quiz';
+import Results from './quiz/Results';
+import { QuizContext } from './helpers/Contexts';
+
+import { useState } from 'react';
 
 
-function App() {
+const App = () => {
+
+  const [score, setScore] = useState(0);
+
   return (
     <div className="app">
-      <BrowserRouter>
-        <Header />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<LandingPages />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/quiz" element={<Quiz />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <QuizContext.Provider value={{ score, setScore }}>
+        <BrowserRouter>
+          <Header />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<LandingPages />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/result" element={<Results />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </QuizContext.Provider>
+
     </div>
   );
 }

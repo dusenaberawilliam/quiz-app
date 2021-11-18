@@ -1,9 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { QuizContext } from '../helpers/Contexts'
+import { Questions } from '../helpers/QuestionBank'
 import Tree from '../share/Tree'
 import './Quiz.css'
 
 const Quiz = () => {
+
+    const [currQuetion, setCurrQuestion] = useState(0);
+    const [optionChosen, setOptionChosen] = useState("");
+
+    const { score, setScore } = useContext(QuizContext)
+
+    let navigate = useNavigate();
+
+    const nextQuestion = () => {
+        if (Questions[currQuetion].answer === optionChosen) {
+            setScore(score + 2);
+        }
+        setCurrQuestion(currQuetion + 1)
+    }
+
+
+    const endQuiz = () => {
+        if (Questions[currQuetion].answer === optionChosen) {
+            setScore(score + 2);
+        }
+        navigate("/result")
+    }
+
+
     return (
         <div className="quiz">
             <div className="quiz__left">
@@ -11,31 +37,37 @@ const Quiz = () => {
             </div>
             <div className="quiz__right">
                 <div className="mb-4">
-                    <h2>Q1. What is the most popular programming langugaes</h2>
+                    <h2>{Questions[currQuetion].prompt}</h2>
                 </div>
                 <div className="flex ml-8 p-2">
-                    <input type="radio" name="q1" />
-                    <p className="ml-2">JavaScript</p>
+                    <input value="A" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                    <p className="ml-2">{Questions[currQuetion].optionA}</p>
                 </div>
                 <div className="flex ml-8 p-2">
-                    <input type="radio" name="q1" />
-                    <p className="ml-2">Java</p>
+                    <input value="B" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                    <p className="ml-2">{Questions[currQuetion].optionB}</p>
                 </div>
                 <div className="flex ml-8 p-2">
-                    <input type="radio" name="q1" />
-                    <p className="ml-2">Python</p>
+                    <input value="C" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                    <p className="ml-2">{Questions[currQuetion].optionC}</p>
                 </div>
                 <div className="flex ml-8 p-2">
-                    <input type="radio" name="q1" />
-                    <p className="ml-2">PHP</p>
+                    <input value="D" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                    <p className="ml-2">{Questions[currQuetion].optionD}</p>
                 </div>
                 <div className="flex ml-8 p-2">
-                    <input type="radio" name="q1" />
-                    <p className="ml-2">Ruby</p>
+                    <input value="E" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                    <p className="ml-2">{Questions[currQuetion].optionE}</p>
                 </div>
-                <Link to="/quiz" >
-                    <button>NEXT</button>
-                </Link>
+
+                {
+                    currQuetion === Questions.length - 1 ? (
+                        <button onClick={endQuiz} >FINISH</button>
+                    ) : (
+                        <button onClick={nextQuestion} >NEXT</button>
+                    )
+                }
+
             </div>
         </div>
     )

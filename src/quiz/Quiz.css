@@ -23,7 +23,7 @@
     padding: 40px;
 }
 
-.quiz__right > a > button {
+.quiz__right > button {
     margin-left: 40px;
     padding: 8px 30px;
     border-radius: 8px;

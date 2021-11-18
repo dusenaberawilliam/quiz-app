@@ -1,0 +1,29 @@
+.result {
+    width: 100%;
+}
+
+.result__left {
+    width: 50%;
+}
+
+.result__right {
+    width: 50%;
+}
+
+.result__right > hr {
+    border: 1px solid rgb(199, 199, 199);
+    margin-right: 100px;
+    margin-left: 100px;
+
+}
+
+.result__right > div > a > button {
+    margin-left: 100px;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    background-color: #fbb730;
+}
+
+

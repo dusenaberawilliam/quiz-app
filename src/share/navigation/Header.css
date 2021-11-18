@@ -1,4 +1,5 @@
 .header {
+    width: 100%;
     display: flex;
     background-color: #002147;
     color: white;
@@ -6,6 +7,11 @@
     padding: 0 35px;
     align-items: center;
     text-align: center;
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .header__logo > img{

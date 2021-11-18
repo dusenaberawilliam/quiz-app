@@ -1,5 +1,4 @@
 import React from 'react'
-import './Tree.css'
 
 const Tree = (props) => {
     return (
@@ -34,7 +33,7 @@ const Tree = (props) => {
                     {props.p3}
                 </div>
             </div>
-            <div className="relative ml-8"> {/*mt-8 => remove cs of big sentence*/}
+            <div className="relative ml-8 mt-8">
                 <div>
                     <div className="w-16 h-px bg-gray-500 absolute top-4 z-0"></div>
                     <div className="bg-white w-8 h-8 rounded absolute z-20 text-center"><p>+</p></div>

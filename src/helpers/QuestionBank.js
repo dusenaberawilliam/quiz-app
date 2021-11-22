@@ -1,6 +1,6 @@
 export const Questions = [
   {
-    prompt: "What is my name?",
+    prompt: "What is my Klab?",
     optionA: "John",
     optionB: "Jake",
     optionC: "Josh",

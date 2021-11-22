@@ -17,6 +17,15 @@ const Login = () => {
                     <Link to="/quiz" >
                         <button>LOGIN</button>
                     </Link>
+
+                    <hr className="mt-4 mb-4 mr-24" />
+
+                    <div className="mt-4 ">
+                        <Link to="/signUp">
+                            SWITCH TO SIGNUP
+                        </Link>
+                    </div>
+
                 </form>
             </div>
         </div>

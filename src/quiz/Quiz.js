@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { QuizContext } from '../helpers/Contexts'
 import { Questions } from '../helpers/QuestionBank'
+import Navbar from '../share/navigation/Navbar'
 import Tree from '../share/Tree'
 import './Quiz.css'
+import Timers from './Timers'
 
 const Quiz = () => {
 
@@ -31,45 +33,53 @@ const Quiz = () => {
 
 
     return (
-        <div className="quiz">
-            <div className="quiz__left">
-                <Tree p1={<p>1</p>} p2={<p>2</p>} p3={<p>3</p>} p4={<p>4</p>} p5={<p>5</p>} />
-            </div>
-            <div className="quiz__right">
-                <div className="mb-4">
-                    <h2>{Questions[currQuetion].prompt}</h2>
+        <>
+            <Navbar />
+            <div className="quiz">
+                <div className="quiz__left">
+                    <Tree p1={<p>1</p>} p2={<p>2</p>} p3={<p>3</p>} p4={<p>4</p>} p5={<p>5</p>} />
                 </div>
-                <div className="flex ml-8 p-2">
-                    <input value="A" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
-                    <p className="ml-2">{Questions[currQuetion].optionA}</p>
-                </div>
-                <div className="flex ml-8 p-2">
-                    <input value="B" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
-                    <p className="ml-2">{Questions[currQuetion].optionB}</p>
-                </div>
-                <div className="flex ml-8 p-2">
-                    <input value="C" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
-                    <p className="ml-2">{Questions[currQuetion].optionC}</p>
-                </div>
-                <div className="flex ml-8 p-2">
-                    <input value="D" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
-                    <p className="ml-2">{Questions[currQuetion].optionD}</p>
-                </div>
-                <div className="flex ml-8 p-2">
-                    <input value="E" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
-                    <p className="ml-2">{Questions[currQuetion].optionE}</p>
-                </div>
+                <div className="quiz__right flex justify-between">
+                    <div>
+                        <div className="mb-4">
+                            <h2>{Questions[currQuetion].prompt}</h2>
+                        </div>
+                        <div className="flex ml-8 p-2">
+                            <input value="A" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                            <p className="ml-2">{Questions[currQuetion].optionA}</p>
+                        </div>
+                        <div className="flex ml-8 p-2">
+                            <input value="B" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                            <p className="ml-2">{Questions[currQuetion].optionB}</p>
+                        </div>
+                        <div className="flex ml-8 p-2">
+                            <input value="C" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                            <p className="ml-2">{Questions[currQuetion].optionC}</p>
+                        </div>
+                        <div className="flex ml-8 p-2">
+                            <input value="D" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                            <p className="ml-2">{Questions[currQuetion].optionD}</p>
+                        </div>
+                        <div className="flex ml-8 p-2">
+                            <input value="E" type="radio" name="q1" onChange={(event) => setOptionChosen(event.target.value)} />
+                            <p className="ml-2">{Questions[currQuetion].optionE}</p>
+                        </div>
 
-                {
-                    currQuetion === Questions.length - 1 ? (
-                        <button onClick={endQuiz} >FINISH</button>
-                    ) : (
-                        <button onClick={nextQuestion} >NEXT</button>
-                    )
-                }
+                        {
+                            currQuetion === Questions.length - 1 ? (
+                                <button onClick={endQuiz} >FINISH</button>
+                            ) : (
+                                <button onClick={nextQuestion} >NEXT</button>
+                            )
+                        }
+                    </div>
+                    <div>
+                        <Timers />
+                    </div>
 
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

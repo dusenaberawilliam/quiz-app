@@ -1,18 +1,18 @@
-.login {
+.signup {
     display: flex;
     width: 100%;
     height: 100vh;
 }
 
-.login__left {
+.signup__right {
     width: 50%;
     background-color: #002147;
-    margin-top: 100px;
-    margin-left: 150px;
+    margin-top: 90px;
+    margin-right: 150px;
     height: 350px;
 }
 
-.login__left > h2 {
+.signup__right > h2 {
     text-align: center;
     font-size: 40px;
     margin-top: 130px;
@@ -20,39 +20,31 @@
     font-weight: 300;
 }
 
-.login__right {
+.signup__left {
     width: 50%;
     background-color: white;
     align-items: center;
-    margin-top: 100px;
-    margin-right: 150px;
+    margin-top: 90px;
+    margin-left: 150px;
     height: 350px;
 }
 
-.login__right > form {
+.signup__left > form {
     margin-left: 80px;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
-.login__right > form > input {
+.signup__left > form > input {
     padding: 10px 80px;
     margin: 12px 8px;
     border-radius: 10px;
     border: solid 1px black;
 }
 
-.login__right > form > a > button {
+.signup__left > form > a > button {
     margin-left: 10px;
     padding: 10px 30px;
     border-radius: 8px;
     font-weight: 500;
     background-color: #fbb730;
-}
-
-.login__right > form > div > a {
-    margin-left: 10px;
-    background-color: #002147;
-    border-radius: 8px;
-    color: white;
-    padding: 8px 20px;
 }

@@ -30,7 +30,7 @@ const TreeResult = (props) => {
                     <div className="w-px h-12 bg-gray-500 left-4 absolute"></div>
                 </div>
                 <div className="ml-16">
-                    {props.q1}
+                    {props.q2}
                 </div>
             </div>
             <div className="relative ml-8 mt-4">
@@ -50,7 +50,7 @@ const TreeResult = (props) => {
                     <div className="w-px h-12 bg-gray-500 left-4 absolute"></div>
                 </div>
                 <div className="ml-16">
-                    {props.q1}
+                    {props.q3}
                 </div>
             </div>
             <div className="relative ml-8 mt-4">
@@ -70,7 +70,7 @@ const TreeResult = (props) => {
                     <div className="w-px h-12 bg-gray-500 left-4 absolute"></div>
                 </div>
                 <div className="ml-16">
-                    {props.q1}
+                    {props.q4}
                 </div>
             </div>
             <div className="relative ml-8 mt-4">
@@ -90,7 +90,7 @@ const TreeResult = (props) => {
                     <div className="w-px h-12 bg-gray-500 left-4 absolute"></div>
                 </div>
                 <div className="ml-16">
-                    {props.q1}
+                    {props.q5}
                 </div>
             </div>
             <div className="relative ml-8 mt-4">

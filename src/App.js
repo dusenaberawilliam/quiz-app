@@ -4,10 +4,9 @@ import './App.css';
 import Footer from './share/footer/Footer';
 import LandingPages from './landingpage/LandingPages';
 import Header from './share/navigation/Header';
-import Navbar from './share/navigation/Navbar'
 import Login from './signing/Login';
+import SignUp from './signing/SignUp';
 import About from './landingpage/About';
-import ContactUs from './landingpage/ContactUs';
 import Quiz from './quiz/Quiz';
 import Results from './quiz/Results';
 import { QuizContext } from './helpers/Contexts';
@@ -24,14 +23,12 @@ const App = () => {
       <QuizContext.Provider value={{ score, setScore }}>
         <BrowserRouter>
           <Header />
-          <Navbar />
           <Routes>
             <Route path="/" element={<LandingPages />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<ContactUs />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/result" element={<Results />} />
+            <Route path="/signUp" element={<SignUp />} />
           </Routes>
           <Footer />
         </BrowserRouter>
